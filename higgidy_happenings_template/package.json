@@ -1,0 +1,20 @@
+{
+  "name": "higgidy_happenings_template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pug index.pug",
+    "watch": "pug -w index.pug",
+    "serve": "live-server",
+    "dev": "concurrently \"npm run watch\" \"npm run serve\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.3.0",
+    "live-server": "^1.2.0",
+    "pug": "^2.0.0-beta11",
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}
