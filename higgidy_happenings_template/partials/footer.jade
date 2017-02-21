@@ -1,0 +1,50 @@
+table#templateFooter(border='0', cellpadding='10', cellspacing='0', width='600')
+  tr
+    td.footerContent(valign='top')
+      table(border='0', cellpadding='10', cellspacing='0', width='100%')
+        tr
+          td#social(colspan='2', valign='middle')
+            div(mc:edit='std_social')
+              a(href='*|TWITTER:PROFILEURL|*') follow on Twitter
+              a(href='*|FACEBOOK:PROFILEURL|*') friend on Facebook
+              a(href='*|FORWARD|*') forward to a friend
+
+        tr
+          td(valign='top', width='370')
+            br
+            div(mc:edit='std_footer')
+              | *|IF:LIST|*
+              em Copyright © *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.
+              br
+              // *|IFNOT:ARCHIVE_PAGE|*
+              | *|LIST:DESCRIPTION|*
+              br
+              strong Our mailing address is:
+              br
+              |  *|HTML:LIST_ADDRESS_HTML|*
+              br
+              // *|END:IF|*
+              | *|ELSE:|*
+              // *|IFNOT:ARCHIVE_PAGE|*
+              em Copyright © *|CURRENT_YEAR|* *|USER:COMPANY|*, All rights reserved.
+              br
+              strong Our mailing address is:
+              br
+              |  *|USER:ADDRESS_HTML|*
+              // *|END:IF|*
+              | *|END:IF|*
+            br
+          td#monkeyRewards(valign='top', width='170')
+            br
+            div(mc:edit='monkeyrewards')
+              | *|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*
+            br
+        tr
+          td#utility(colspan='2', valign='middle')
+            div(mc:edit='std_utility')
+              a(href='*|UNSUB|*') unsubscribe from this list
+
+              a(href='*|UPDATE_PROFILE|*') update subscription preferences
+              // *|IFNOT:ARCHIVE_PAGE|*
+              a(href='*|ARCHIVE|*') view email in browser
+              // *|END:IF|*
